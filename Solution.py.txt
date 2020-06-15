@@ -1,0 +1,20 @@
+def diagonalSumUtil(root, vd, diagonalSum) : 
+  
+    if(not root):  
+        return
+          
+    if vd not in diagonalSum: 
+        diagonalSum[vd] = 0
+    diagonalSum[vd] += root.data
+    diagonalSumUtil(root.left, vd + 1,  
+                          diagonalSum)
+    def diagonalSum(root):
+    #:param root: root of the given tree.
+    
+    #code here
+    diagonalSum = dict()  
+      
+    diagonalSumUtil(root, 0, diagonalSum)  
+      
+    for it in diagonalSum: 
+        print(diagonalSum[it], end = " ")
